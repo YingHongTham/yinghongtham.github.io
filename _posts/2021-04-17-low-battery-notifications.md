@@ -2,7 +2,6 @@
 layout: post
 title:  "Low Battery Notifications"
 date:   2021-04-17 23:04:55 -0400
-categories: jekyll update
 published: true
 ---
 
