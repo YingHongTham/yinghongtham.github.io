@@ -28,7 +28,14 @@ Then add the following:
 	"xclip -o -selection primary | xclip -i -selection clipboard"
 		F8
 
-So when highlighting something, `<F8>` acts as a sort of "copy" button.
+Load the file with
+
+	$ xbindkeys
+
+or add it to `~.xinitrc`.
+
+After highlighting something, say in visual mode in Vim,
+`<F8>` acts as a sort of "copy" button.
 (I would use `ctrl+shift+c`, but Firefox already has that shortcut taken.)
 
 Also, pasting into terminal doesn't work great,

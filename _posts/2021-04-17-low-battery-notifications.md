@@ -7,8 +7,9 @@ published: true
 
 When my laptop's battery hits 5%,
 it makes a small beep sound.
-However, sometimes I would miss it if I happen to be away
-when it beeps.
+However, sometimes I would miss it if I happen to be away,
+or would plug the cable into a power outlet but forget that
+the other end is not plugged into my laptop...
 So I wrote a simple systemd service that beeps every 10 seconds
 after the battery drops below 10%.
 
