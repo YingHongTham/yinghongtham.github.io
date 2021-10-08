@@ -7,7 +7,7 @@ layout: home
 
 Hi!
 
-I am a Research Fellow at the Deparment of Genetics
+I am a Research Fellow at the Department of Genetics
 of Albert Einstein College of Medicine.
 I work with Prof. Scott Emmons to uncover the genetic codes
 that determine neuron connections in C. Elegans.
