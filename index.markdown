@@ -13,6 +13,7 @@ I was a graduate student at Stony Brook University
 (Aug 2016 - Aug 2021), my advisor was Alexander Kirillov.
 
 Academic work:
+- [Generalization of the Thistlethwaite--Tsvietkova Method](https://arxiv.org/abs/2309.01282) (joint with Alice Kwon, Byungdo Park)
 - [The Y-Product](https://arxiv.org/abs/2209.14251) (joint with Alice Kwon)
 - [On the Category of Boundary Values in the Extended Crane-Yetter TQFT (PhD thesis)](https://arxiv.org/abs/2108.13467)
 - [Hyperbolicity of Augmented Links in the Thickened Torus](https://arxiv.org/abs/2010.10601) (joint with Alice Kwon,
