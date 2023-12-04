@@ -7,6 +7,9 @@ layout: home
 
 Hi!
 
+![Me](/assets/yinghongtham.jpg)
+
+
 I am a postdoc at the University of Hamburg,
 starting October 2022.
 I was a graduate student at Stony Brook University
