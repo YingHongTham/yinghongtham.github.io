@@ -57,16 +57,21 @@ endfunction
 function YankJuliaFunction()
 	" save current cursor position
 	let save_cursor = getcurpos()
+	let save_winview = winsaveview()
 
 	" search for the latest function above cursor, then delete search record
 	call search("function", "b")
 	call histdel("search", -1)
 
 	" use % to move to end; default julia.vim already handles with matchit
-	execute "norm 0V%\"+y"
+	execute "norm 0V%"
+	redraw
+	sleep 50ms
+	execute "norm \"+y"
 
 	" return cursor to start position
 	call setpos('.', save_cursor)
+	call winrestview(save_winview)
 endfunction
 
 " yank current block into clipboard (register "+)
@@ -74,6 +79,7 @@ endfunction
 function YankJuliaBlock()
 	" save current cursor position
 	let save_cursor = getcurpos()
+	let save_winview = winsaveview()
 
 	if search("#++#", "bW") == 0
 		" failed to find marker, go to top of file
@@ -84,11 +90,14 @@ function YankJuliaBlock()
 	if search("#++#", "W") == 0
 		execute "norm G"
 	end
+	redraw
+	sleep 50ms
 	call histdel("search", -1)
 	execute "norm \"+y"
 
 	" return cursor to start position
 	call setpos('.', save_cursor)
+	call winrestview(save_winview)
 endfunction
 
 nmap <F6> :call YankJuliaFunction()<CR>
