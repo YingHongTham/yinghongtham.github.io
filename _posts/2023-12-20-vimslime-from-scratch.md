@@ -59,7 +59,7 @@ function YankJuliaFunction()
 	let save_cursor = getcurpos()
 
 	" search for the latest function above cursor, then delete search record
-	execute "?function"
+	call search("function", "b")
 	call histdel("search", -1)
 
 	" use % to move to end; default julia.vim already handles with matchit
@@ -69,7 +69,30 @@ function YankJuliaFunction()
 	call setpos('.', save_cursor)
 endfunction
 
+" yank current block into clipboard (register "+)
+" blocks are delineated with markers #++#
+function YankJuliaBlock()
+	" save current cursor position
+	let save_cursor = getcurpos()
+
+	if search("#++#", "bW") == 0
+		" failed to find marker, go to top of file
+		execute "norm gg"
+	end
+	call histdel("search", -1)
+	execute "norm 0Vj"
+	if search("#++#", "W") == 0
+		execute "norm G"
+	end
+	call histdel("search", -1)
+	execute "norm \"+y"
+
+	" return cursor to start position
+	call setpos('.', save_cursor)
+endfunction
+
 nmap <F6> :call YankJuliaFunction()<CR>
+nmap <F7> :call YankJuliaBlock()<CR>
 nmap <F9> :call Send_Clipboard_to_Pane()<CR>
 ```
 
