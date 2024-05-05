@@ -60,7 +60,7 @@ function YankJuliaFunction()
 	let save_winview = winsaveview()
 
 	" search for the latest function above cursor, then delete search record
-	call search("function", "b")
+	call search("function", "bc")
 	call histdel("search", -1)
 
 	" use % to move to end; default julia.vim already handles with matchit
@@ -81,7 +81,7 @@ function YankJuliaBlock()
 	let save_cursor = getcurpos()
 	let save_winview = winsaveview()
 
-	if search("#++#", "bW") == 0
+	if search("#++#", "bcW") == 0
 		" failed to find marker, go to top of file
 		execute "norm gg"
 	end
